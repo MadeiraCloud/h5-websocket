@@ -1,0 +1,1 @@
+Scribe = Npm.require("scribe");
