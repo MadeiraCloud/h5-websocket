@@ -12,7 +12,7 @@ class @RequestPublisher extends Publisher
 
 		check session_id, String
 
-		check region, String
+		#check region, String
 
 		@onStop stopFunc = () =>
 

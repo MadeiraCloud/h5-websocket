@@ -23,7 +23,7 @@
 
 								console.info "Session expired, session #{session_id}, user #{username}"
 
-								publish_handler.stop()
+								publish_handler.error( new Meteor.Error( 404, ERROR_CODE.INVALID_SESSION, ERROR_CODE.INVALID_SESSION_DETAIL ) )
 
 					# start interval when valid is done
 					publish_handler.interval = setInterval sessionVerifyIntervel, 10000
