@@ -28,6 +28,30 @@
 	OPS_NOTIFY_EMAIL                     :    'Forge.Notify.Email'
 
 }
+@APP_STATE = {
+	# ---- App ----
+	STATE_APP_RUNNING					: 	"Running"
+	STATE_APP_SHUTTING_DOWN				: 	"Shutting down"
+	STATE_APP_STOPPED					: 	"Stopped"
+	STATE_APP_STOPPING  				: 	"Stopping"
+	STATE_APP_STARTING					: 	"Starting"
+	STATE_APP_REBOOTING					: 	"Rebooting"
+	STATE_APP_UPDATING					: 	"Updating"
+	STATE_APP_SAVING					: 	"Saving"
+	STATE_APP_CLONING					: 	"Cloning"
+	STATE_APP_TERMINATING				: 	"Terminating"
+	STATE_APP_TERMINATED				: 	"Terminated"
+	STATE_APP_CREATING  				: 	"Creating"
+	STATE_APP_INITIALIZING      		: 	"Initializing"
+	STATE_APP_CANCELLED 				: 	"Cancelled"
+}
+
+@STACK_STATE = {
+	# --- Stack ----
+	STATE_STACK_ENABLED					: 	"Enabled"
+	STATE_STACK_DISABLED				: 	"Disabled"
+	STATE_STACK_REMOVED					: 	"Removed"
+}
 
 
 @REQUEST_STATE = {

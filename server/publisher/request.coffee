@@ -18,15 +18,15 @@ class @RequestPublisher extends Publisher
 
 			clearInterval @interval
 
-		sessionVerify this, username, session_id, return_call = (true_or_false) => 
+		sessionVerify this, username, session_id, return_call = (true_or_false) =>
 
-			if true_or_false == true 
+			if true_or_false == true
 
 				console.info "Open subscription for session #{session_id}, user #{username}"
 
 				query = {
-							'$and'	: [	
-									{'$or'	: [{'username':username}, {'owner':username}]},									
+							'$and'	: [
+									{'$or'	: [{'username':username}, {'owner':username}]},
 									{'code'	  : {'$nin'	:	[REQUEST_CODE.OPS_NOTIFY_EMAIL, REQUEST_CODE.OPS_APP_NOTIFY]}},
 									{
 										'$or' : [
@@ -41,7 +41,7 @@ class @RequestPublisher extends Publisher
 									}
 								]
 						}
-						
+
 				if region
 
 					query['$and'].push {'region' : region}
@@ -49,7 +49,7 @@ class @RequestPublisher extends Publisher
 				Request_collection.find(
 					query
 					{
-						fields: 
+						fields:
 							{
 								'id'			:	1
 								'code'			:	1
@@ -62,6 +62,7 @@ class @RequestPublisher extends Publisher
 								'time_submit'	:	1
 								'time_begin'	:	1
 								'time_end'		:	1
+								'region'		:	1
 							}
 					}
 				)
@@ -91,9 +92,9 @@ class @RequestDetailPublisher extends Publisher
 
 		#	clearInterval @interval
 
-		sessionVerify this, username, session_id, return_call = (true_or_false) => 
+		sessionVerify this, username, session_id, return_call = (true_or_false) =>
 
-			if true_or_false == true 
+			if true_or_false == true
 
 				query 	= 	Request_collection.find(
 								{
@@ -106,7 +107,7 @@ class @RequestDetailPublisher extends Publisher
 										'id'			:	1
 										'dag.spec.history'	:	1
 									}
-									
+
 								}
 							)
 
