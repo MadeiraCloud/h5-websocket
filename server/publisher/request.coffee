@@ -63,6 +63,7 @@ class @RequestPublisher extends Publisher
 								'time_begin'	:	1
 								'time_end'		:	1
 								'region'		:	1
+								'dag.step'      :   1
 							}
 					}
 				)
