@@ -11,9 +11,10 @@
 
 		client.verifySync username, session_id, verify_call = (true_or_false) ->
 
-				if true_or_false 
+				if true_or_false
 
 					sessionVerifyIntervel = () ->
+
 
 						client.checkHashValueAsync username, "id", session_id, verify_call = (true_or_false) ->
 
@@ -39,11 +40,11 @@
 
 					session_call true
 
-				else 
-				
+				else
+
 					session_call false
 
 
-	else 
+	else
 		console.error ERROR_CODE.REDIS_CONFIG
 
