@@ -1,11 +1,13 @@
-class @Publisher 
+class @Publisher
 
-	constructor : (@publish_name) ->		
+	constructor : (@publish_name) ->
 
 	publishCall : ->
 
-	publish :-> 
+	publish :->
 
-		console.info "Publish open for: " + @publish_name
+		current_time = new Date()
+
+		console.info "#{current_time}, Publish open for: " + @publish_name
 
 		Meteor.publish @publish_name, @publishCall
