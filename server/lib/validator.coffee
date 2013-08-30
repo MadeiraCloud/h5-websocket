@@ -30,13 +30,15 @@
 					publish_handler.interval = setInterval sessionVerifyIntervel, 10000
 
 					# stop intervel when socket is close
-					publish_handler._session.socket.on "close", stopFunc = () =>
+					if publish_handler._session.socket
 
-						console.info "Connection closed, session #{session_id}, user #{username}"
+						publish_handler._session.socket.on "close", stopFunc = () =>
 
-						clearInterval publish_handler.interval
-						#stop publish when socket is close
-						publish_handler.stop()
+							console.info "Connection closed, session #{session_id}, user #{username}"
+
+							clearInterval publish_handler.interval
+							#stop publish when socket is close
+							publish_handler.stop()
 
 					session_call true
 
