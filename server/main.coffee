@@ -5,7 +5,7 @@ Meteor.startup start = () ->
 
 	scribeInit()
 
-	request_publisher 			= new RequestPublisher 
+	request_publisher 			= new RequestPublisher
 
 	request_detail_publisher 	= new RequestDetailPublisher
 
@@ -13,10 +13,14 @@ Meteor.startup start = () ->
 
 	app_publisher				= new AppPublisher
 
+	state_publisher				= new StatePublisher
+
 	app_publisher.publish()
-	
+
 	stack_publisher.publish()
 
 	request_publisher.publish()
 
 	request_detail_publisher.publish()
+
+	state_publisher.publish()
