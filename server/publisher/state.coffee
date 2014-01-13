@@ -31,10 +31,12 @@ class @StatePublisher extends Publisher
 					{
 						fields:
 							{
-								'app_id'		:	1
-								'res_id'		:	1
-								'statuses'		:	1
-								'waiting'		:	1
+								'app_id'				:	1
+								'res_id'				:	1
+								'statuses'				:	1
+								'statuses.$.stdout'		:	-1
+								'statuses.$.stderr'		:	-1
+								'waiting'				:	1
 							}
 					}
 				)
