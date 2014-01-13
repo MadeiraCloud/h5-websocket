@@ -1,10 +1,10 @@
-@state_collection = new Meteor.Collection("state");
+@state_collection = new Meteor.Collection("status");
 
 class @StatePublisher extends Publisher
 
 	constructor :->
 
-		super "state"
+		super "status"
 
 	publishCall : ( username, session_id ) ->
 
@@ -20,7 +20,7 @@ class @StatePublisher extends Publisher
 
 			if true_or_false == true
 
-				console.info "Open state subscription for session #{session_id}, user #{username}"
+				console.info "Open status subscription for session #{session_id}, user #{username}"
 
 				query = {
 							'username'  : username
