@@ -26,7 +26,7 @@ class @StatePublisher extends Publisher
 							'username'  : username
 						}
 
-				stack_collection.find(
+				state_collection.find(
 					query
 					{
 						fields:
