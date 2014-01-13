@@ -4,7 +4,7 @@ class @StatePublisher extends Publisher
 
 	constructor :->
 
-		super "stack"
+		super "state"
 
 	publishCall : ( username, session_id ) ->
 
