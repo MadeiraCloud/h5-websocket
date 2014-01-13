@@ -33,7 +33,7 @@ class @StatePublisher extends Publisher
 							{
 								'app_id'		:	1
 								'res_id'		:	1
-								'status'		:	1
+								'statuses'		:	1
 								'waiting'		:	1
 							}
 					}
