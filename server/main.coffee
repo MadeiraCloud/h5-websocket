@@ -15,6 +15,10 @@ Meteor.startup start = () ->
 
 	state_publisher				= new StatePublisher
 
+	import_publisher 			= new ImportPublisher
+
+	import_publisher.publish()
+
 	app_publisher.publish()
 
 	stack_publisher.publish()
