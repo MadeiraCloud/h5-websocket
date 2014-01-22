@@ -56,7 +56,7 @@ class @RequestPublisher extends Publisher
 				query = {
 							'$and'	: [
 									{'$or'	: [{'username':username}, {'owner':username}]},
-									{'code'	  : {'$nin'	:	[REQUEST_CODE.OPS_NOTIFY_EMAIL, REQUEST_CODE.OPS_APP_NOTIFY]}},
+									{'code'	  : {'$nin'	:	[REQUEST_CODE.OPS_NOTIFY_EMAIL, REQUEST_CODE.OPS_APP_NOTIFY, REQUEST_CODE.OPS_APP_IMPORT]}},
 									{
 										'$or' : [
 											{'$or' : [{'state':REQUEST_STATE.STATE_OPS_PENDING}, {'state':REQUEST_STATE.STATE_OPS_INPROCESS}]},

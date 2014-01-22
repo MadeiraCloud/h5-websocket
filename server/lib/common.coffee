@@ -10,6 +10,7 @@
 	OPS_APP_UPDATE                       :    'Forge.App.Update'
 	OPS_APP_CLONE                        :    'Forge.App.Clone'
 	OPS_APP_NOTIFY                       :    'Forge.App.Notify'
+	OPS_APP_IMPORT                       :    'Forge.App.Import'
 
 	# ---- Stack ----
 	OPS_STACK_CREATE                     :    'Forge.Stack.Create'
@@ -61,7 +62,7 @@
 	STATE_OPS_DONE						 :    "Done"
 	STATE_OPS_FAILED					 :    "Failed"
 	STATE_OPS_CANCELLED					 : 	  "Cancelled"
-	
+
 }
 
 @ERROR_CODE = {
