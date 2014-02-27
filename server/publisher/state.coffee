@@ -33,9 +33,10 @@ class @StatePublisher extends Publisher
 							{
 								'app_id'				:	1
 								'res_id'				:	1
-								'statuses.state_id'		:	1
-								'statuses.result'		:	1
-								'statuses.time'			:	1
+								'agent_status'          :   1
+								'status.id'		        :	1
+								'status.result'		    :	1
+								'status.time'			:	1
 								'waiting'				:	1
 							}
 					}
