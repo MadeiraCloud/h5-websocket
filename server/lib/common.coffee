@@ -11,6 +11,7 @@
 	OPS_APP_CLONE                        :    'Forge.App.Clone'
 	OPS_APP_NOTIFY                       :    'Forge.App.Notify'
 	OPS_APP_IMPORT                       :    'Forge.App.Import'
+	OPS_APP_RENDER                       :    'Forge.App.Render'
 
 	# ---- Stack ----
 	OPS_STACK_CREATE                     :    'Forge.Stack.Create'
