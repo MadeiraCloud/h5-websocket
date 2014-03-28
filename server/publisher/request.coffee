@@ -94,6 +94,7 @@ class @RequestPublisher extends Publisher
 								'region'		:	1
 								'dag.step'      :   1
 								'dag.state'		:	1
+								'suggestion'	:	1
 							}
 					}
 				)
