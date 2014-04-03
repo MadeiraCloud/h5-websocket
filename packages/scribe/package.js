@@ -13,6 +13,7 @@ Npm.depends(
 Package.on_use(
 	function (api)
 		{
+			api.export('Scribe', 'server');
 			api.add_files('scribe.js', 'server');  
 		}
 	);

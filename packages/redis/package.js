@@ -14,6 +14,7 @@ Npm.depends(
 Package.on_use(
 	function (api)
 		{
+			api.export('redis', 'server');
 			api.add_files('redis.js', 'server');  
 		}
 	);
