@@ -1,6 +1,6 @@
 @CONFIG = {
 
-	redis_host 	: 	"10.0.0.5",
+	redis_host 	: 	"localhost",
 
 	redis_port 	: 	8285,
 
