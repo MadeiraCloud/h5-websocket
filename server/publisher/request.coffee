@@ -1,34 +1,5 @@
 @Request_collection = new Meteor.Collection("request")
 
-Fiber = Npm.require("fibers")
-
-Meteor.methods {
-
-	update_request : ( message )->
-		console.log("Got update request_id: " + message)
-		doc_id = new Meteor.Collection.ObjectID(message)
-		doc = Request_collection.findOne({_id:doc_id})
-		Request_collection.update({_id:doc_id}, {$inc:{ws_update:1}})
-
-}
-
-redis_host = CONFIG.redis_host
-
-client = new redisClient redis_host
-
-client.redis_client.on "message", (channel, message) ->
-
-
-	Fiber(
-		()->
-			Meteor.call "update_request", message
-	).run()
-
-
-client.redis_client.subscribe "request"
-
-
-
 class @RequestPublisher extends Publisher
 
 	constructor :->
