@@ -66,6 +66,7 @@ class @RequestPublisher extends Publisher
 								'dag.step'      :   1
 								'dag.state'		:	1
 								'suggestion'	:	1
+								'dag.spec.id'	: 	1
 							}
 					}
 				)
