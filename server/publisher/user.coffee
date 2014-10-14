@@ -34,7 +34,10 @@ class @UserPublisher extends Publisher
 						fields:
 							{
 								'payment_state'	:	1,
-								'username'		:	1
+								'username'	:	1,
+								'has_card'	:	1,
+								'current_quota'	:	1
+
 							}
 					}
 				)
