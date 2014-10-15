@@ -36,7 +36,8 @@ class @UserPublisher extends Publisher
 								'payment_state'	:	1,
 								'username'	:	1,
 								'has_card'	:	1,
-								'current_quota'	:	1
+								'current_quota'	:	1,
+								'time_update'	:	1
 
 							}
 					}
