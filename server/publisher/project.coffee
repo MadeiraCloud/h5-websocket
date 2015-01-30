@@ -24,7 +24,7 @@ class @ProjectPublisher extends Publisher
 
 				console.info "Open project subscription for session #{session_id}, user #{username}"
 
-				user_info = project_collection.findOne({
+				user_info = user_collection.findOne({
 						'username': username
 					},{
 						fields:	{
