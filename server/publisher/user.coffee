@@ -33,8 +33,9 @@ class @UserPublisher extends Publisher
 					{
 						fields:
 							{
-								'payment_state'	:	1,
-								'username'		:	1
+								'payment'	:	1,
+								'username'	:	1,
+								'time_update'	:	1
 							}
 					}
 				)
