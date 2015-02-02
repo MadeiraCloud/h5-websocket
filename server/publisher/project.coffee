@@ -53,6 +53,8 @@ class @ProjectPublisher extends Publisher
 								'id'		:	1,
 								'credentials.id':1,
 								'credentials.is_demo':1,
+								'credentials.provider':1,
+								'credentials.aliases':1,
 								'tokens'	:	1
 							}
 					}
