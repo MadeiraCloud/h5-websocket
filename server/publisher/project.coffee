@@ -47,8 +47,13 @@ class @ProjectPublisher extends Publisher
 						fields:
 							{
 								'payment'	:	1,
-								'member'	:	1,
-								'state'		:	1
+								'members'	:	1,
+								'state'		:	1,
+								'name'		:	1,
+								'id'		:	1,
+								'credentials.id':1,
+								'credentials.is_demo':1,
+								'tokens'	:	1
 							}
 					}
 				)
