@@ -6,7 +6,7 @@ class @RequestPublisher extends Publisher
 
 		super "request"
 
-	publishCall : ( username, session_id, project_id, region ) ->
+	publishCall : ( username, session_id, project_id ) ->
 
 		check username, String
 
@@ -63,9 +63,9 @@ class @RequestPublisher extends Publisher
 								]
 						}
 
-				if region
+				# if region
 
-					query['$and'].push {'region' : region}
+				# 	query['$and'].push {'region' : region}
 
 				Request_collection.find(
 					query
