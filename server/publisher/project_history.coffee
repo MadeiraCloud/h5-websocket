@@ -38,15 +38,15 @@ class @HistoryPublisher extends Publisher
 					{
 						'id'  : project_id,
 						'members.id': {
-	                        '$in': [
-	                            user_info['id']
-	                        ]
-	                    },
-	                    'members.role': {
-	                        '$in': [
-	                            'admin'
-	                        ]
-	                    }
+							'$in': [
+								user_info['id']
+								]
+						},
+						'members.role': {
+							'$in': [
+								'admin'
+							]
+						}
 					}
 					{
 						fields:
@@ -60,15 +60,15 @@ class @HistoryPublisher extends Publisher
 						{
 							'id'  : project_id,
 							'members.id': {
-		                        '$in': [
-		                            user_info['id']
-		                        ],
-		                    },
-		                    'members.role': {
-		                        '$in': [
-		                            'admin'
-		                        ]
-		                    }
+								'$in': [
+									user_info['id']
+								],
+							},
+							'members.role': {
+								'$in': [
+									'admin'
+								]
+							}
 						}
 						{
 							fields:
@@ -89,9 +89,9 @@ class @HistoryPublisher extends Publisher
 					{
 						'project_id'  : project_id,
 						'type': {
-	                        '$in': allow_history_type,
-	                    },
-	                    'time' : {'$gt' : Math.round(new Date().getTime()/1000) - 86400*7}
+							'$in': allow_history_type,
+						},
+						'time' : {'$gt' : Math.round(new Date().getTime()/1000) - 86400*7}
 					}
 				)
 
