@@ -22,7 +22,7 @@ class @HistoryPublisher extends Publisher
 
 			if true_or_false == true
 
-				console.info "Open project history subscription for session #{session_id}, user #{username}"
+				console.info "Open project history subscription for session #{session_id}, user #{username}, project_id #{project_id}"
 
 				user_info = user_collection.findOne({
 						'username': username
@@ -85,13 +85,15 @@ class @HistoryPublisher extends Publisher
 				else
 					allow_history_type = ['stack', 'app', 'member', 'payment', 'credential', 'token', 'project']
 
+				timestamp = Math.round(new Date().getTime()/1000) - 86400*7
+				console.info(timestamp)
 				history_collection.find(
 					{
 						'project_id'  : project_id,
 						'type': {
 							'$in': allow_history_type,
 						},
-						'time' : {'$gt' : Math.round(new Date().getTime()/1000) - 86400*7}
+						'time' : {'$gt' : timestamp}
 					}
 				)
 
