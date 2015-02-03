@@ -40,7 +40,7 @@ class @HistoryPublisher extends Publisher
 						'members.id': {
 	                        '$in': [
 	                            user_info['id']
-	                        ],
+	                        ]
 	                    },
 	                    'members.role': {
 	                        '$in': [
