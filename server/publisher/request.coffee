@@ -100,6 +100,7 @@ class @RequestPublisher extends Publisher
 						fields:
 							{
 								'id'			:	1
+								'project_id'	:	1
 								'code'			:	1
 								'state'			:	1
 								'data'			:	1
