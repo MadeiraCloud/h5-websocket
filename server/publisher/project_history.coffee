@@ -37,15 +37,10 @@ class @HistoryPublisher extends Publisher
 				admin_query = project_collection.findOne(
 					{
 						'id'  : project_id,
-						'members.id': {
-							'$in': [
-								user_info['id']
-								]
-						},
-						'members.role': {
-							'$in': [
-								'admin'
-							]
+						'members': {
+							'$elemMatch': {
+								'id':user_info['id'], 'role':'admin'
+							}
 						}
 					}
 					{
@@ -60,15 +55,10 @@ class @HistoryPublisher extends Publisher
 					user_query = project_collection.findOne(
 						{
 							'id'  : project_id,
-							'members.id': {
-								'$in': [
-									user_info['id']
-								],
-							},
-							'members.role': {
-								'$in': [
-									'admin'
-								]
+							'members': {
+								'$elemMatch': {
+									'id':user_info['id'], 'role':'collaborator'
+								}
 							}
 						}
 						{
