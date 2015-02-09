@@ -86,8 +86,7 @@ class @HistoryPublisher extends Publisher
 					allow_history_type = ['stack', 'app', 'member', 'payment', 'credential', 'token', 'project']
 
 				timestamp = Math.round(new Date().getTime()/1000) - 86400*7
-				console.info(timestamp)
-				console.info(allow_history_type)
+
 				history_collection.find(
 					{
 						'project_id'  : project_id,
