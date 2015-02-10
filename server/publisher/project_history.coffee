@@ -50,7 +50,7 @@ class @HistoryPublisher extends Publisher
 							}
 					}
 				)
-				console.info(admin_query)
+
 				if not admin_query
 					user_query = project_collection.findOne(
 						{
