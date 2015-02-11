@@ -58,6 +58,8 @@ class @StackPublisher extends Publisher
 					{
 						fields:
 							{
+								'project_id'	:	1
+								'revision'		:	1
 								'description'	:	1
 								'time_create'	:	1
 								'region'		:	1

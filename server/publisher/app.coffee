@@ -71,6 +71,8 @@ class @AppPublisher extends Publisher
 								'name'			:	1
 								'owner'			:	1
 								'stack_id'		:	1
+								'revision'		:	1
+								'project_id'	:	1
 							}
 					}
 				)
