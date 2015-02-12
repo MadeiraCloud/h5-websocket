@@ -73,6 +73,7 @@ class @AppPublisher extends Publisher
 								'stack_id'		:	1
 								'revision'		:	1
 								'project_id'	:	1
+								'usage'			:	1
 							}
 					}
 				)
