@@ -69,6 +69,7 @@ class @StackPublisher extends Publisher
 								'property'		:	1
 								'id'			:	1
 								'name'			:	1
+								'provider'		:	1
 							}
 					}
 				)
