@@ -89,6 +89,7 @@ class @RequestPublisher extends Publisher
 								'dag.state'		:	1
 								'suggestion'	:	1
 								'dag.spec.id'	: 	1
+								'username'		:	1
 							}
 					}
 				)
