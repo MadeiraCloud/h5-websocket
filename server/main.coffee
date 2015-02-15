@@ -17,6 +17,16 @@ Meteor.startup start = () ->
 
 	import_publisher 			= new ImportPublisher
 
+	user_publisher				= new UserPublisher
+
+	project_publisher			= new ProjectPublisher
+
+	history_publisher  			= new HistoryPublisher
+
+	history_publisher.publish()
+
+	user_publisher.publish()
+
 	import_publisher.publish()
 
 	app_publisher.publish()
@@ -28,3 +38,5 @@ Meteor.startup start = () ->
 	request_detail_publisher.publish()
 
 	state_publisher.publish()
+
+	project_publisher.publish()

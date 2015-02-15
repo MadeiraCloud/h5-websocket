@@ -6,7 +6,7 @@ class @StackPublisher extends Publisher
 
 		super "stack"
 
-	publishCall : ( username, session_id, region ) ->
+	publishCall : ( username, session_id, project_id ) ->
 
 		check username, String
 
@@ -16,30 +16,50 @@ class @StackPublisher extends Publisher
 
 			clearInterval @interval
 
-		sessionVerify this, username, session_id, return_call = (true_or_false) => 
+		sessionVerify this, username, session_id, return_call = (true_or_false) =>
 
-			if true_or_false == true 
+			if true_or_false == true
 
 				console.info "Open stack subscription for session #{session_id}, user #{username}"
 
+				user_info = user_collection.findOne({
+						'username': username
+					},{
+						fields:	{
+							'id'	:	1
+						}
+					})
+
+				project = project_collection.findOne(
+					{
+						'id'  : project_id,
+						'members.id': {
+	                        '$in': [
+	                            user_info['id']
+	                        ],
+	                    },
+					}
+				)
+
+				if not project
+					@error( new Meteor.Error( 404, ERROR_CODE.INVALID_SESSION, ERROR_CODE.INVALID_SESSION_DETAIL ) )
+
 				query = {
-							
-							'username'  : username,
+
+							'project_id'  : project_id,
 							'state'     : {
 								'$ne'   : STACK_STATE.STATE_STACK_REMOVED
 							}
-							
-						}
-						
-				if region
 
-					query.region = region
+						}
 
 				stack_collection.find(
 					query
 					{
-						fields: 
+						fields:
 							{
+								'project_id'	:	1
+								'revision'		:	1
 								'description'	:	1
 								'time_create'	:	1
 								'region'		:	1
@@ -49,6 +69,7 @@ class @StackPublisher extends Publisher
 								'property'		:	1
 								'id'			:	1
 								'name'			:	1
+								'provider'		:	1
 							}
 					}
 				)

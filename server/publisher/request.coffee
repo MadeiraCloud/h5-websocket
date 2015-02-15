@@ -6,7 +6,7 @@ class @RequestPublisher extends Publisher
 
 		super "request"
 
-	publishCall : ( username, session_id, region ) ->
+	publishCall : ( username, session_id, project_id ) ->
 
 		check username, String
 
@@ -24,9 +24,30 @@ class @RequestPublisher extends Publisher
 
 				console.info "Open subscription for session #{session_id}, user #{username}"
 
+				user_info = user_collection.findOne({
+						'username': username
+					},{
+						fields:	{
+							'id'	:	1
+						}
+					})
+
+				project = project_collection.findOne(
+					{
+						'id'  : project_id,
+						'members.id': {
+	                        '$in': [
+	                            user_info['id']
+	                        ],
+	                    },
+					}
+				)
+				if not project
+					@error( new Meteor.Error( 404, ERROR_CODE.INVALID_SESSION, ERROR_CODE.INVALID_SESSION_DETAIL ) )
+
 				query = {
 							'$and'	: [
-									{'$or'	: [{'username':username}, {'owner':username}]},
+									{'$or'	: [{'project_id': project_id}]},
 									{'code'	  : {'$nin'	:	[REQUEST_CODE.OPS_NOTIFY_EMAIL, REQUEST_CODE.OPS_APP_NOTIFY, REQUEST_CODE.OPS_APP_IMPORT, REQUEST_CODE.OPS_APP_RENDER]}},
 									{
 										'$or' : [
@@ -42,9 +63,9 @@ class @RequestPublisher extends Publisher
 								]
 						}
 
-				if region
+				# if region
 
-					query['$and'].push {'region' : region}
+				# 	query['$and'].push {'region' : region}
 
 				Request_collection.find(
 					query
@@ -52,6 +73,7 @@ class @RequestPublisher extends Publisher
 						fields:
 							{
 								'id'			:	1
+								'project_id'	:	1
 								'code'			:	1
 								'state'			:	1
 								'data'			:	1
@@ -67,6 +89,7 @@ class @RequestPublisher extends Publisher
 								'dag.state'		:	1
 								'suggestion'	:	1
 								'dag.spec.id'	: 	1
+								'username'		:	1
 							}
 					}
 				)
