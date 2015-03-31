@@ -75,6 +75,7 @@ class @AppPublisher extends Publisher
 								'project_id'	:	1
 								'usage'			:	1
 								'provider'		:	1
+								'type'			:	1
 							}
 					}
 				)
