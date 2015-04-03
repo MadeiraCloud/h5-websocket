@@ -70,6 +70,7 @@ class @StackPublisher extends Publisher
 								'id'			:	1
 								'name'			:	1
 								'provider'		:	1
+								'type'			:	1
 							}
 					}
 				)
